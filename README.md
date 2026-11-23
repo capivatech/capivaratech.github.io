@@ -1,1 +1,1 @@
-# capivaratech.github.io
+# capivaratec.github.io
