@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CapivaTech · matemática, física, automação e programação</title>
+<meta name="description" content="CapivaTech: coletivo sem fins lucrativos de ex-estudantes de Engenharia Física da UNILA que resolve problemas da academia e da sociedade com matemática, física, automação, programação, IoT e IA.">
+<link rel="canonical" href="https://capivatec.github.io/">
+<link rel="icon" href="capivatech-mark-pequeno.svg" type="image/svg+xml">
+<link rel="icon" href="capivatech.ico" sizes="any">
+<link rel="apple-touch-icon" href="capivatech-256.png">
+<meta name="theme-color" content="#020605">
+<meta property="og:type" content="website"><meta property="og:title" content="CapivaTech">
+<meta property="og:description" content="Matemática, física, automação e programação para resolver problemas reais. Sem fins lucrativos.">
+<meta property="og:image" content="https://capivatec.github.io/capivatech-og.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"CapivaTech","url":"https://capivatec.github.io/","logo":"https://capivatec.github.io/capivatech-512.png","nonprofitStatus":"Nonprofit","foundingLocation":"Foz do Iguaçu, PR, Brasil","founder":[{"@type":"Person","name":"Bruno Henrique Dourado Macedo","url":"https://brunohdmacedo.tech/"},{"@type":"Person","name":"Felipe Camargo"},{"@type":"Person","name":"Renata Olmedo Benedet"}],"sameAs":["https://github.com/capivatec"]}</script>
+<style>
+:root{--bg:#020605;--bg2:#06110D;--card:rgba(8,24,18,.78);--fg:#E9FFF6;--mut:#8DBFAE;--line:#123A2C;--ve:#00FF9C;--ci:#2BD9C9;--vi:#9B6BFF;--am:#F5B544;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*:before,*:after{box-sizing:inherit;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px));background:var(--bg)}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 'Space Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+#chuva{position:fixed;inset:0;width:100%;height:100%;z-index:0;opacity:.32;pointer-events:none}
+.scan{position:fixed;inset:0;z-index:1;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,255,156,.035) 0 1px,transparent 1px 3px)}
+header,main,footer{position:relative;z-index:2}
+a{color:var(--ve);text-decoration:none}a:hover{text-shadow:0 0 10px var(--ve)}
+.mono{font-family:'JetBrains Mono',monospace}
+.w{max-width:1140px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:rgba(2,6,5,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:3;background:rgba(2,6,5,.82)}
+.nav{display:flex;align-items:center;gap:18px;height:64px}
+.marca{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--fg)}.marca img{width:36px;height:36px;border-radius:9px}.marca span{color:var(--ve);text-shadow:0 0 12px rgba(0,255,156,.6)}
+.links{display:flex;gap:20px;margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:14px}.links a{color:var(--mut)}.links a:hover{color:var(--ve)}
+.ctl{display:flex;gap:8px}.ctl select{font:inherit;font-size:13px;font-family:'JetBrains Mono',monospace;background:var(--bg2);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:5px 8px}
+.hero{min-height:calc(100vh - 64px);display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:40px 0}
+.term{font-family:'JetBrains Mono',monospace;background:rgba(2,10,7,.86);border:1px solid var(--line);border-radius:14px;box-shadow:0 0 40px rgba(0,255,156,.08),inset 0 0 0 1px rgba(0,255,156,.05);overflow:hidden}
+.term .bar{display:flex;gap:7px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:12px;color:var(--mut);align-items:center}.term .bar i{width:11px;height:11px;border-radius:50%;display:inline-block}
+.term pre{padding:18px 18px 22px;font-size:clamp(13px,1.5vw,15.5px);white-space:pre-wrap;line-height:1.7;min-height:220px}
+.p{color:var(--ve)}.c{color:var(--mut)}.k{color:var(--ci)}.s{color:var(--am)}
+.cur{display:inline-block;width:.6em;background:var(--ve);animation:pisca 1s steps(1) infinite;color:transparent}@keyframes pisca{50%{opacity:0}}
+h1,.lead,.sub,.cd p{text-shadow:0 0 10px #020605,0 0 2px #020605}h1{font-size:clamp(34px,5.2vw,60px);line-height:1.04;letter-spacing:-1.2px;margin:16px 0}h1 em{font-style:normal;color:var(--ve);text-shadow:0 0 18px rgba(0,255,156,.55)}
+.lead{font-size:18px;color:var(--mut);max-width:600px}
+.bts{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.b{display:inline-flex;gap:8px;align-items:center;padding:11px 18px;border-radius:10px;font-weight:500;border:1px solid var(--line);color:var(--fg);background:rgba(8,24,18,.6);font-family:'JetBrains Mono',monospace;font-size:14px}
+.b.p1{background:var(--ve);color:#021208;border-color:var(--ve);box-shadow:0 0 22px rgba(0,255,156,.35)}.b:hover{text-shadow:none;transform:translateY(-1px);border-color:var(--ve)}
+.arte{justify-self:center;width:min(420px,90%);filter:drop-shadow(0 0 40px rgba(0,255,156,.25))}
+.etq{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--ve);letter-spacing:.5px}
+section{padding:80px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-.6px;margin:8px 0 10px}.sub{color:var(--mut);max-width:740px;margin-bottom:30px}
+.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.cd{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;backdrop-filter:blur(4px);transition:border-color .2s,box-shadow .2s}
+.cd:hover{border-color:rgba(0,255,156,.5);box-shadow:0 0 26px rgba(0,255,156,.10)}
+.cd .sb{font-family:'JetBrains Mono',monospace;font-size:28px;color:var(--ve);text-shadow:0 0 14px rgba(0,255,156,.5);margin-bottom:10px;line-height:1}
+.cd h3{font-size:18px;margin-bottom:6px}.cd p{color:var(--mut);font-size:15px}
+.cd .eq{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--ci);margin-top:10px;opacity:.85}
+.hist{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.hist b{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--am);display:block;margin-bottom:6px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.tags span{font-family:'JetBrains Mono',monospace;font-size:12px;border:1px solid var(--line);border-radius:6px;padding:2px 8px;color:var(--mut)}
+.proj .cd{display:flex;flex-direction:column;gap:8px}.proj .cd a{margin-top:auto}.proj .novo{border-style:dashed;justify-content:center;text-align:center}
+.av{width:78px;height:78px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font:700 24px 'JetBrains Mono',monospace;color:var(--ve);border:2px solid var(--ve);box-shadow:0 0 18px rgba(0,255,156,.35),inset 0 0 18px rgba(0,255,156,.15);background:#03120C}
+.pess .cd{text-align:center}
+.contato{border:1px solid var(--ve);border-radius:20px;padding:36px;background:linear-gradient(135deg,rgba(0,255,156,.08),rgba(8,24,18,.7));display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between;box-shadow:0 0 40px rgba(0,255,156,.08)}
+footer{border-top:1px solid var(--line);padding:26px 0 34px;color:var(--mut);font-size:14px;font-family:'JetBrains Mono',monospace}footer .w{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+:focus-visible{outline:2px solid var(--ve);outline-offset:3px;border-radius:6px}
+@media (max-width:880px){.hero{grid-template-columns:1fr;min-height:auto;padding-top:30px}.arte{order:-1;width:220px}.links{display:none}.hist{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.cur{animation:none}#chuva{display:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<canvas id="chuva" aria-hidden="true"></canvas><div class="scan" aria-hidden="true"></div>
+<header><div class="w nav">
+  <a class="marca" href="#topo"><img src="capivatech-64.png" alt=""><b>Capiva<span>Tech</span></b></a>
+  <nav class="links"><a href="#sobre" data-t="n1">sobre</a><a href="#areas" data-t="n2">áreas</a><a href="#projetos" data-t="n3">projetos</a><a href="#fundadores" data-t="n4">fundadores</a><a href="#contato" data-t="n5">contato</a></nav>
+  <div class="ctl"><select id="lang" aria-label="Idioma"><option value="pt">PT</option><option value="en">EN</option><option value="es">ES</option></select></div>
+</div></header>
+<main id="topo">
+<div class="w hero">
+  <div>
+    <div class="term" aria-label="terminal">
+      <div class="bar"><i style="background:#F06A72"></i><i style="background:#F5B544"></i><i style="background:#00FF9C"></i><span style="margin-left:8px">capivatech@unila:~</span></div>
+      <pre id="tty"></pre>
+    </div>
+    <h1 data-t="h1" data-html>Matemática, física, automação e programação para <em>problemas reais</em></h1>
+    <p class="lead" data-t="lead">Coletivo sem fins lucrativos de ex-estudantes de Engenharia Física da UNILA. Pesquisa e otimização de processos com código, sensores e inteligência artificial — por hobby e com código aberto.</p>
+    <div class="bts"><a class="b p1" href="#projetos" data-t="b1">./ver_projetos</a><a class="b" href="https://github.com/capivatec" target="_blank" rel="noopener">github</a><a class="b" href="#contato" data-t="b3">./falar_conosco</a></div>
+  </div>
+  <img class="arte" src="capivatech-512.png" alt="Logo da CapivaTech: capivara em neon com trilhas de circuito para matemática, física, automação e programação">
+</div>
+
+<section id="sobre"><div class="w">
+  <div class="etq">// 01 · origem</div><h2 data-t="t1">Da sala de aula para o mundo</h2>
+  <p class="sub" data-t="d1">A CapivaTech começou como projeto de uma disciplina e virou um compromisso: usar o que aprendemos para resolver problemas de verdade.</p>
+  <div class="hist">
+    <div class="cd"><b>t = 0</b><h3 data-t="h1b">Uma disciplina</h3><p data-t="h1c">Nasceu na disciplina de Desenvolvimento de Projetos do curso de Engenharia Física da UNILA, em Foz do Iguaçu.</p></div>
+    <div class="cd"><b>t → ∞</b><h3 data-t="h2b">Um hobby com propósito</h3><p data-t="h2c">Depois da graduação, os fundadores decidiram continuar: hoje é mantida por hobby, sem fins lucrativos e sem vínculo comercial.</p></div>
+    <div class="cd"><b>min f(x)</b><h3 data-t="h3b">Pesquisa e otimização</h3><p data-t="h3c">O foco é resolver problemas da academia, da sociedade e de outras necessidades, otimizando processos com ciência e tecnologia.</p></div>
+  </div>
+</div></section>
+
+<section id="areas"><div class="w">
+  <div class="etq">// 02 · áreas</div><h2 data-t="t2">O que fazemos</h2>
+  <p class="sub" data-t="d2">Juntamos o rigor da física e da matemática com a prática da engenharia e da computação.</p>
+  <div class="grade">
+    <div class="cd"><div class="sb">∑</div><h3 data-t="a1">Matemática e otimização</h3><p data-t="a1d">Modelagem, métodos numéricos, estatística e otimização para medir e melhorar processos.</p><div class="eq">min f(x) s.a. g(x) ≤ 0</div></div>
+    <div class="cd"><div class="sb">ψ</div><h3 data-t="a2">Física computacional</h3><p data-t="a2d">Simulação de materiais, estrutura eletrônica e fenômenos físicos, do modelo ao resultado publicável.</p><div class="eq">Ĥψ = Eψ</div></div>
+    <div class="cd"><div class="sb">⚙</div><h3 data-t="a3">Automação e controle</h3><p data-t="a3d">Sistemas que medem, decidem e agem sozinhos: controle PID, CLPs, robótica e processos industriais.</p><div class="eq">u(t) = Kp·e + Ki∫e dt + Kd·ė</div></div>
+    <div class="cd"><div class="sb">&lt;/&gt;</div><h3 data-t="a4">Programação e software científico</h3><p data-t="a4d">Ferramentas abertas, análise de dados e aplicações para laboratórios, grupos de pesquisa e estudantes.</p><div class="eq">git commit -m "ciência aberta"</div></div>
+    <div class="cd"><div class="sb">((•))</div><h3 data-t="a5">IoT e instrumentação</h3><p data-t="a5d">Sensores, microcontroladores e coleta de dados em tempo real, do protótipo à estação em campo.</p><div class="eq">ESP8266 → MQTT → dados</div></div>
+    <div class="cd"><div class="sb">∇</div><h3 data-t="a6">Inteligência artificial</h3><p data-t="a6d">Aprendizado de máquina para prever, classificar e apoiar decisões, com dados bem tratados.</p><div class="eq">θ ← θ − η∇L(θ)</div></div>
+  </div>
+</div></section>
+
+<section id="principios"><div class="w">
+  <div class="etq">// 03 · protocolo</div><h2 data-t="t3">Como trabalhamos</h2>
+  <div class="grade">
+    <div class="cd"><h3 data-t="p1">Código aberto</h3><p data-t="p1d">O que criamos fica disponível para qualquer pessoa estudar, usar e melhorar.</p></div>
+    <div class="cd"><h3 data-t="p2">Sem fins lucrativos</h3><p data-t="p2d">Trabalhamos por hobby e por propósito; a recompensa é o problema resolvido.</p></div>
+    <div class="cd"><h3 data-t="p3">Problemas reais</h3><p data-t="p3d">Partimos de uma necessidade concreta de um laboratório, de uma escola ou da comunidade.</p></div>
+    <div class="cd"><h3 data-t="p4">Crédito e colaboração</h3><p data-t="p4d">Trabalhamos com pesquisadores, estudantes e organizações, dando crédito a cada pessoa.</p></div>
+  </div>
+</div></section>
+
+<section id="projetos" class="proj"><div class="w">
+  <div class="etq">// 04 · projetos</div><h2 data-t="t4">Projetos</h2>
+  <div class="grade">
+    <div class="cd"><h3 data-t="j1">Plataforma de dados meteorológicos</h3><p data-t="j1d">Estação meteorológica IoT com ESP8266 e energia solar: vento, temperatura, umidade, pressão e chuva, com armazenamento local e envio pela internet. Base para estudos de geração solar.</p>
+      <div class="tags"><span>IoT</span><span>ESP8266</span><span>C/C++</span><span data-t="tg1">energia solar</span></div><a href="https://github.com/capivatec/CapivaTech" target="_blank" rel="noopener" data-t="ver">ver no GitHub →</a></div>
+    <div class="cd"><h3>BrUMaRe</h3><p data-t="j2d">Software livre para analisar cálculos de estrutura eletrônica (CASTEP, VASP, SIESTA, Quantum ESPRESSO e ORCA). Projeto de um dos fundadores, Bruno Macedo, desenvolvido no mestrado.</p>
+      <div class="tags"><span>Python</span><span>JavaScript</span><span>DFT</span><span data-t="tg2">ciência de materiais</span></div><a href="https://brunohdmacedo.tech/brumare/" data-t="abrir">abrir o BrUMaRe →</a></div>
+    <div class="cd novo"><div class="sb">?</div><h3 data-t="j3">O próximo pode ser o seu</h3><p data-t="j3d">Tem um problema na pesquisa, na universidade ou na comunidade que a tecnologia pode resolver? Queremos ouvir.</p><a href="#contato" data-t="b3">./falar_conosco</a></div>
+  </div>
+</div></section>
+
+<section id="fundadores"><div class="w">
+  <div class="etq">// 05 · fundadores</div><h2 data-t="t5">Quem criou</h2>
+  <p class="sub" data-t="d5">Ex-estudantes de graduação em Engenharia Física da UNILA, que criaram a CapivaTech na disciplina de Desenvolvimento de Projetos.</p>
+  <div class="grade pess">
+    <div class="cd"><div class="av">BM</div><h3>Bruno Henrique Dourado Macedo</h3><p data-t="f1">Engenheiro Físico · mestrando em Física Aplicada (PPGFISA, UNILA)</p><a href="https://brunohdmacedo.tech/" data-t="site">site pessoal →</a></div>
+    <div class="cd"><div class="av">FC</div><h3>Felipe Camargo</h3><p data-t="f2">Engenharia Física · UNILA</p></div>
+    <div class="cd"><div class="av">RO</div><h3>Renata Olmedo Benedet</h3><p data-t="f2">Engenharia Física · UNILA</p><a href="https://brunohdmacedo.tech/robenedet/" data-t="site">site pessoal →</a></div>
+  </div>
+</div></section>
+
+<section id="contato"><div class="w">
+  <div class="contato">
+    <div><div class="etq">// 06 · contato</div><h2 data-t="t6">Vamos resolver juntos?</h2><p class="sub" style="margin:0" data-t="d6">Conte o seu problema ou a sua ideia. Respondemos pelo GitHub ou por e-mail.</p></div>
+    <div class="bts" style="margin:0"><a class="b p1" href="https://github.com/capivatec" target="_blank" rel="noopener">github.com/capivatec</a><a class="b" href="mailto:brunohdmacedo@gmail.com?subject=CapivaTech">e-mail</a></div>
+  </div>
+</div></section>
+</main>
+<footer><div class="w"><span>© CapivaTech · <span data-t="rod">coletivo sem fins lucrativos · ex-estudantes da UNILA</span></span><span>∫ ψ ⚙ &lt;/&gt;</span></div></footer>
+<script>
+const T = {
+ en:{n1:'about',n2:'areas',n3:'projects',n4:'founders',n5:'contact',h1:'Mathematics, physics, automation and programming for <em>real problems</em>',
+  lead:'A non-profit collective of former Engineering Physics students at UNILA. Research and process optimization with code, sensors and artificial intelligence — as a hobby and open source.',
+  b1:'./see_projects',b3:'./talk_to_us',t1:'From the classroom to the world',d1:'CapivaTech started as a course project and became a commitment: using what we learned to solve real problems.',
+  h1b:'A university course',h1c:'It was born in the Project Development course of the Engineering Physics program at UNILA, in Foz do Iguaçu.',h2b:'A hobby with a purpose',
+  h2c:'After graduating, the founders decided to keep going: today it is run as a hobby, non-profit and with no commercial ties.',h3b:'Research and optimization',
+  h3c:'The focus is solving problems for academia, society and other needs, optimizing processes with science and technology.',t2:'What we do',
+  d2:'We combine the rigour of physics and mathematics with the practice of engineering and computing.',a1:'Mathematics and optimization',a1d:'Modelling, numerical methods, statistics and optimization to measure and improve processes.',
+  a2:'Computational physics',a2d:'Simulation of materials, electronic structure and physical phenomena, from model to publishable result.',a3:'Automation and control',
+  a3d:'Systems that measure, decide and act on their own: PID control, PLCs, robotics and industrial processes.',a4:'Programming and scientific software',
+  a4d:'Open tools, data analysis and applications for laboratories, research groups and students.',a5:'IoT and instrumentation',a5d:'Sensors, microcontrollers and real-time data collection, from prototype to field station.',
+  a6:'Artificial intelligence',a6d:'Machine learning to predict, classify and support decisions, with well-curated data.',t3:'How we work',p1:'Open source',p1d:'What we create is available for anyone to study, use and improve.',
+  p2:'Non-profit',p2d:'We work for fun and for purpose; the reward is a solved problem.',p3:'Real problems',p3d:'We start from a concrete need of a laboratory, a school or the community.',
+  p4:'Credit and collaboration',p4d:'We work with researchers, students and organizations, crediting every person.',t4:'Projects',j1:'Weather data platform',
+  j1d:'Solar-powered IoT weather station with ESP8266: wind, temperature, humidity, pressure and rain, with local storage and internet upload. A basis for solar-energy studies.',
+  tg1:'solar energy',ver:'see on GitHub →',j2d:'Free software to analyse electronic-structure calculations (CASTEP, VASP, SIESTA, Quantum ESPRESSO and ORCA). A project by one of the founders, Bruno Macedo, developed during his master\'s.',
+  tg2:'materials science',abrir:'open BrUMaRe →',j3:'The next one could be yours',j3d:'Do you have a problem in research, at university or in the community that technology can solve? We want to hear it.',
+  t5:'Who created it',d5:'Former Engineering Physics undergraduates at UNILA, who created CapivaTech in the Project Development course.',f1:'Engineering Physicist · master\'s student in Applied Physics (PPGFISA, UNILA)',
+  f2:'Engineering Physics · UNILA',site:'personal website →',t6:'Shall we solve it together?',d6:'Tell us about your problem or idea. We answer on GitHub or by e-mail.',rod:'non-profit collective · former UNILA students'},
+ es:{n1:'sobre',n2:'áreas',n3:'proyectos',n4:'fundadores',n5:'contacto',h1:'Matemáticas, física, automatización y programación para <em>problemas reales</em>',
+  lead:'Colectivo sin fines de lucro de exestudiantes de Ingeniería Física de la UNILA. Investigación y optimización de procesos con código, sensores e inteligencia artificial — como pasatiempo y con código abierto.',
+  b1:'./ver_proyectos',b3:'./hablar_con_nosotros',t1:'Del aula al mundo',d1:'CapivaTech empezó como proyecto de una asignatura y se convirtió en un compromiso: usar lo aprendido para resolver problemas reales.',
+  h1b:'Una asignatura',h1c:'Nació en la asignatura de Desarrollo de Proyectos de Ingeniería Física de la UNILA, en Foz do Iguaçu.',h2b:'Un pasatiempo con propósito',
+  h2c:'Después del grado, los fundadores decidieron continuar: hoy se mantiene como pasatiempo, sin fines de lucro y sin vínculo comercial.',h3b:'Investigación y optimización',
+  h3c:'El foco es resolver problemas de la academia, la sociedad y otras necesidades, optimizando procesos con ciencia y tecnología.',t2:'Qué hacemos',
+  d2:'Unimos el rigor de la física y las matemáticas con la práctica de la ingeniería y la computación.',a1:'Matemáticas y optimización',a1d:'Modelado, métodos numéricos, estadística y optimización para medir y mejorar procesos.',
+  a2:'Física computacional',a2d:'Simulación de materiales, estructura electrónica y fenómenos físicos, del modelo al resultado publicable.',a3:'Automatización y control',
+  a3d:'Sistemas que miden, deciden y actúan solos: control PID, PLC, robótica y procesos industriales.',a4:'Programación y software científico',
+  a4d:'Herramientas abiertas, análisis de datos y aplicaciones para laboratorios, grupos de investigación y estudiantes.',a5:'IoT e instrumentación',a5d:'Sensores, microcontroladores y recolección de datos en tiempo real, del prototipo a la estación en campo.',
+  a6:'Inteligencia artificial',a6d:'Aprendizaje automático para predecir, clasificar y apoyar decisiones, con datos bien tratados.',t3:'Cómo trabajamos',p1:'Código abierto',p1d:'Lo que creamos queda disponible para que cualquiera lo estudie, use y mejore.',
+  p2:'Sin fines de lucro',p2d:'Trabajamos por pasatiempo y por propósito; la recompensa es el problema resuelto.',p3:'Problemas reales',p3d:'Partimos de una necesidad concreta de un laboratorio, una escuela o la comunidad.',
+  p4:'Crédito y colaboración',p4d:'Trabajamos con investigadores, estudiantes y organizaciones, dando crédito a cada persona.',t4:'Proyectos',j1:'Plataforma de datos meteorológicos',
+  j1d:'Estación meteorológica IoT con ESP8266 y energía solar: viento, temperatura, humedad, presión y lluvia, con almacenamiento local y envío por internet. Base para estudios de generación solar.',
+  tg1:'energía solar',ver:'ver en GitHub →',j2d:'Software libre para analizar cálculos de estructura electrónica (CASTEP, VASP, SIESTA, Quantum ESPRESSO y ORCA). Proyecto de uno de los fundadores, Bruno Macedo, desarrollado en la maestría.',
+  tg2:'ciencia de materiales',abrir:'abrir BrUMaRe →',j3:'El próximo puede ser el suyo',j3d:'¿Tiene un problema en la investigación, la universidad o la comunidad que la tecnología pueda resolver? Queremos escucharlo.',
+  t5:'Quién lo creó',d5:'Exestudiantes de Ingeniería Física de la UNILA, que crearon CapivaTech en la asignatura de Desarrollo de Proyectos.',f1:'Ingeniero Físico · estudiante de maestría en Física Aplicada (PPGFISA, UNILA)',
+  f2:'Ingeniería Física · UNILA',site:'sitio personal →',t6:'¿Lo resolvemos juntos?',d6:'Cuéntenos su problema o su idea. Respondemos por GitHub o por correo electrónico.',rod:'colectivo sin fines de lucro · exestudiantes de la UNILA'}};
+const TTY = {pt:['> capivatech --missao','resolver problemas reais da academia e da sociedade','> capivatech --areas','[∑ matemática] [ψ física] [⚙ automação] [</> programação]','> status','sem fins lucrativos · código aberto · UNILA'],
+ en:['> capivatech --mission','solve real problems for academia and society','> capivatech --areas','[∑ math] [ψ physics] [⚙ automation] [</> programming]','> status','non-profit · open source · UNILA'],
+ es:['> capivatech --mision','resolver problemas reales de la academia y la sociedad','> capivatech --areas','[∑ matemáticas] [ψ física] [⚙ automatización] [</> programación]','> status','sin fines de lucro · código abierto · UNILA']};
+const $ = id => document.getElementById(id), ORIG = {};
+document.querySelectorAll('[data-t]').forEach(e => ORIG[e.dataset.t] = ORIG[e.dataset.t] || (e.hasAttribute('data-html') ? e.innerHTML : e.textContent));
+const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches; let ttyTimer = null;
+function esc(s){ return s.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+function terminal(l){ clearTimeout(ttyTimer); const L = TTY[l], el = $('tty'); const cor = t => t.startsWith('>') ? `<span class="p">${esc(t)}</span>` : (t.startsWith('[') ? `<span class="k">${esc(t)}</span>` : `<span class="c">${esc(t)}</span>`);
+  if (calmo){ el.innerHTML = L.map(cor).join('\n') + '\n<span class="p">&gt;</span> <span class="cur">_</span>'; return; }
+  let i = 0, j = 0, feito = []; (function passo(){ if (i >= L.length){ el.innerHTML = feito.map(cor).join('\n') + '\n<span class="p">&gt;</span> <span class="cur">_</span>'; return; }
+    j++; const atual = L[i].slice(0, j); el.innerHTML = feito.map(cor).concat(cor(atual) + '<span class="cur">_</span>').join('\n');
+    if (j >= L[i].length){ feito.push(L[i]); i++; j = 0; ttyTimer = setTimeout(passo, 380); } else ttyTimer = setTimeout(passo, L[i].startsWith('>') ? 42 : 14); })(); }
+function idioma(l){ document.documentElement.lang = {pt:'pt-BR', en:'en', es:'es'}[l];
+  document.querySelectorAll('[data-t]').forEach(e => { const v = l === 'pt' ? ORIG[e.dataset.t] : (T[l][e.dataset.t] || ORIG[e.dataset.t]); if (e.hasAttribute('data-html')) e.innerHTML = v; else e.textContent = v; });
+  $('lang').value = l; terminal(l); try { localStorage.setItem('capivatech.lang', l); } catch (e) {} }
+let l0 = 'pt'; try { l0 = localStorage.getItem('capivatech.lang') || (navigator.language || 'pt').slice(0, 2); } catch (e) {}
+idioma(['pt', 'en', 'es'].includes(l0) ? l0 : 'en'); $('lang').addEventListener('change', e => idioma(e.target.value));
+(function chuva(){ if (calmo) return; const cv = $('chuva'), cx = cv.getContext('2d'), S = '∫∑∂∇π√∞λħψΩΔ01{}<>=/&|PIDKpf(x)dt'.split(''); let W, H, col, y, fs = 16, ativo = true;
+  function tam(){ const r = devicePixelRatio || 1; W = cv.width = innerWidth * r; H = cv.height = innerHeight * r; fs = 16 * r; col = Math.ceil(W / fs); y = Array.from({length: col}, () => Math.random() * -H / fs); }
+  tam(); addEventListener('resize', tam); document.addEventListener('visibilitychange', () => ativo = !document.hidden);
+  let t0 = 0; (function quadro(t){ requestAnimationFrame(quadro); if (!ativo || t - t0 < 55) return; t0 = t;
+    cx.fillStyle = 'rgba(2,6,5,0.12)'; cx.fillRect(0, 0, W, H); cx.font = fs + 'px JetBrains Mono, monospace';
+    for (let i = 0; i < col; i++){ const ch = S[Math.random() * S.length | 0]; cx.fillStyle = Math.random() > .975 ? '#E9FFF6' : '#00FF9C'; cx.fillText(ch, i * fs, y[i] * fs);
+      if (y[i] * fs > H && Math.random() > .975) y[i] = 0; y[i]++; } })(0); })();
+</script>
+</body>
+</html>
